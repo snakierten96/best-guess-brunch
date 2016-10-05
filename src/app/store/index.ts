@@ -3,15 +3,19 @@ import * as createLogger from 'redux-logger';
 
 import { IAppState, rootReducer, deimmutify, reimmutify } from './store';
 import { ILineup, IParty } from './lineup';
+import { IMenu, IMenuItem } from './menu'
 import { ITable, ITables } from './tables';
 
 export {
   IAppState,
   rootReducer,
   ILineup,
+  IMenu,
+  IMenuItem,
   IParty,
   ITable,
-  ITables
+  ITables,
+  reimmutify
 };
 
 export const middleware = [
