@@ -26,6 +26,7 @@ export const middleware = [
   })
 ];
 
+/*
 export const enhancers = [
   persistState(
     '',{
@@ -34,3 +35,4 @@ export const enhancers = [
       deserialize: s => reimmutify(JSON.parse(s))
     })
 ];
+*/

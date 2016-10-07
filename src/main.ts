@@ -11,14 +11,25 @@ import { ngRedux, INgReduxProvider} from 'ng-redux';
 import 'angular-material/angular-material.min.css';
 
 import { AppComponent } from './app/app.component';
-import { rootReducer } from './store';
+//import { rootReducer } from './app/store';
 
 module TrendyBrunch {
   "use strict";
 
-  angular.module('TrendyBrunch', [ 'ngMaterial', 'ngSanitize', 'ngRedux' ])
-    .config(( $ngReduxProvider: INgReduxProvider ) => {
-      $ngReduxProvider(rootReducer, []);
+  angular.module('TrendyBrunch', [ 'ngMaterial', 'ngSanitize' ])
+    .config((
+      $mdThemingProvider: angular.material.IThemingProvider) => {
+
+      // Set theme
+      $mdThemingProvider.theme('default')
+        .primaryPalette('teal')
+        .accentPalette('purple');
+
+      // Configure store
+      //$ngReduxProvider.createStoreWith(rootReducer, []);
     })
+    
+    // Register all of our components
+    .component(AppComponent.componentName, AppComponent.componentConfig)
   ;
 }

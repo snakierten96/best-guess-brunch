@@ -6,17 +6,18 @@ export class AppComponent {
   static componentConfig: ng.IComponentOptions = {
     bindings: {},
     controller: AppComponent,
-    templateUrl: './app.component.html'
+    template: require('./app.component.html')
   };
-  
-  private $inject = ['$scope', '$log', '$ngRedux'];
-  
-  constructor(private $scope, private $log, private $ngRedux) {
-    let unsubscribe = $ngRedux.connect()
-  }
 
-  mapStateToThis(state) {
-    return {};
+  // Define our injectables
+  private $mdSidenav: angular.material.ISidenavService;
+
+  constructor(
+    $mdSidenav: angular.material.ISidenavService) { 
+  
+    // Store our injectables
+    this.$mdSidenav = $mdSidenav;
+      
   }
 
 }
