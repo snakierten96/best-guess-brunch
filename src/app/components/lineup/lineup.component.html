@@ -1,0 +1,51 @@
+<md-card>
+  <md-card-header>
+    <md-card-header-text>
+      <span class="md-title">Parties in Line</span>
+      <span class="md-subhead">Waiting for Service</span>
+    </md-card-header-text>
+  </md-card-header>
+  <md-card-content>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="party in $ctrl.lineup">
+          <td>{{ party.numberOfPeople }}</td>
+          <td>{{ party.partyName }}</td>
+          <td>
+            <md-button class="md-icon-button md-warn">
+              <md-icon>close</md-icon>
+            </md-button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <md-input-container>
+              <label>Number of People</label>
+              <input type="number" ng-model="numberOfPeople" />
+            </md-input-container>
+          </td>
+          <td>
+            <md-input-container>
+              <label>Party Name</label>
+              <input type="text" ng-model="partyName" />
+            </md-input-container>
+          </td>
+          <td>
+            <md-button
+              class="md-raised md-accent"
+              ng-click="$ctrl.partyJoined">
+              New Party
+            </md-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </md-card-content>
+</md-card>

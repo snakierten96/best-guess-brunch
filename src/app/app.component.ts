@@ -6,8 +6,16 @@ export class AppComponent {
   static componentConfig: ng.IComponentOptions = {
     bindings: {},
     controller: AppComponent,
-    template: require('./app.component.html')
+    template: require('./app.component.html')    
   };
+
+  views: Object[] = [
+    {
+      name: 'My Account',
+      description: 'Edit my account information',
+      icon: 'assignment ind'
+    }
+  ];
 
   // Define our injectables
   private $mdSidenav: angular.material.ISidenavService;
@@ -18,6 +26,10 @@ export class AppComponent {
     // Store our injectables
     this.$mdSidenav = $mdSidenav;
       
+  }
+
+  toggleMenu() {
+    this.$mdSidenav('left').toggle();
   }
 
 }

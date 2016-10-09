@@ -1,16 +1,50 @@
 <div layout="column" flex>
   
   <!-- toolbar container -->
-  <md-toolbar class="md-toolbar-tools" layout="row">
-    <md-button class="menu md-icon-button" aria-label="Menu">
+  <md-toolbar class="md-toolbar-tools md-whiteframe-2dp" layout="row">
+    <md-button 
+      class="menu md-icon-button"
+      ng-click="$ctrl.toggleMenu()" 
+      aria-label="Menu">
       <md-icon>menu</md-icon>
     </md-button>
     <h1>TrendyBrunch</h1>
   </md-toolbar>
   
-  <!-- area container -->
-  <div layout="row" flex>
-    
-  </div>
+  <div flex layout="row">
+
+    <md-sidenav class="md-whiteframe-4dp" md-component-id="left">
+      <md-list>
+        <md-list-item ng-repeat="view in $ctrl.views">
+          <md-icon class="md-list-icon">{{ view.icon }}</md-icon>
+          {{ view.name }}
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
   
+    <md-content flex id="content">
+      <!-- area container -->
+      <div class="grid-container">
+        <md-grid-list md-cols="6" md-row-height="fit">
+
+          <!-- Lineup -->
+          <md-grid-tile md-colspan="2">
+            <tb-lineup></tb-lineup>
+          </md-grid-tile>
+
+          <!-- Tables -->
+          <md-grid-tile md-colspan="4"></md-grid-tile>
+
+          <!-- Orders -->      
+          <md-grid-tile md-colspan="3"></md-grid-tile>
+          <!-- Inventory -->
+          <md-grid-tile md-colspan="3"></md-grid-tile>
+
+        </md-grid-list>
+
+      </div>
+    </md-content>
+ 
+  </div>
+
 </div>

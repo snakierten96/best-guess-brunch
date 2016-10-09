@@ -1,0 +1,44 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.secondary {
+  color: rgba(0, 0,0, 0.54);
+}
+
+md-sidenav-layout {
+  background: rgba(0, 0,0, 0.03);
+}
+
+/*
+.grid-container {
+  margin: 5px;
+  height: 100%;
+}
+*/
+
+.grid-container > md-grid-list {
+  height: inherit;
+}
+
+md-grid-tile figure {
+  display: block !important;
+  margin: 4px !important;
+}
+
+.md-button {
+  text-transform: inherit;
+}
+
+md-content#content {
+  position: absolute;
+  top: 64px;
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+
+md-card-content {
+  font-size: 14px;
+}
