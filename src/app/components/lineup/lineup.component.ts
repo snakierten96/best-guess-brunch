@@ -7,7 +7,19 @@ export class LineupComponent {
     template: require('./lineup.component.html'),
   };
 
-  public lineup = [];
-
+  public lineup = [
+    {
+      numberOfPeople: 2,
+      partyName: 'smith'
+    },
+    {
+      numberOfPeople: 2,
+      partyName: 'smith'
+    },
+    {
+      numberOfPeople: 2,
+      partyName: 'smith'
+    }
+  ];
 
 }

@@ -3,6 +3,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+[ng-cloak] {
+  display: none;
+}
+
+html, body {
+  font-size: 14px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .secondary {
   color: rgba(0, 0,0, 0.54);
 }
@@ -22,6 +41,17 @@ md-sidenav-layout {
   height: inherit;
 }
 
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  overflow: auto;
+}
+
+.card-container md-card {
+  width: 48%;
+  margin: 0 8px 8px 0;
+}
+
 md-grid-tile figure {
   display: block !important;
   margin: 4px !important;
@@ -31,6 +61,7 @@ md-grid-tile figure {
   text-transform: inherit;
 }
 
+/*
 md-content#content {
   position: absolute;
   top: 64px;
@@ -38,6 +69,7 @@ md-content#content {
   left: 0;
   right: 0
 }
+*/
 
 md-card-content {
   font-size: 14px;

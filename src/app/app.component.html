@@ -1,50 +1,88 @@
-<div layout="column" flex>
+<div id="wrapper">
+
+  <div layout="column" flex>
+    
+    <!-- toolbar container -->
+    <md-toolbar class="md-toolbar-tools md-whiteframe-2dp" layout="row">
+      <md-button 
+        class="menu md-icon-button"
+        ng-click="$ctrl.toggleMenu()" 
+        aria-label="Menu">
+        <md-icon>menu</md-icon>
+      </md-button>
+      <h1>TrendyBrunch</h1>
+    </md-toolbar>
+    
+    <div flex layout="row">
+
+      <md-sidenav class="md-whiteframe-4dp" md-component-id="left">
+        <md-list>
+          <md-list-item ng-repeat="view in $ctrl.views">
+            <md-icon class="md-list-icon">{{ view.icon }}</md-icon>
+            {{ view.name }}
+          </md-list-item>
+        </md-list>
+
+
+      </md-sidenav>
+
+      <md-content flex id="content">
+        <!-- area container -->
+        <div class="grid-container">
+          <md-grid-list md-cols="6" md-row-height="fit">
+
+            <!-- Lineup -->
+            <md-grid-tile md-colspan="2">
+              <tb-lineup></tb-lineup>
+            </md-grid-tile>
+
+            <!-- Tables -->
+            <md-grid-tile md-colspan="4">
+              <div class="card-container">
+                <md-card ng-repeat="table in $ctrl.tables">
+                  <md-card-header>
+                    <md-card-header-text>
+                      <span class="md-title">Table #{{ table.id }}</span>
+                    </md-card-header-text>
+                  </md-card-header>
+                  <md-card-content>
+                    ipsum ipsum ipsum
+                    <md-input-container>
+                      <label>Party</label>
+                      <md-select ng-model="$ctrl.party">
+                        <md-option><em>None</em></md-option>
+                        <md-option ng-value="smith">smith</md-option>
+                        <md-option ng-value="jones">jones</md-option>                        
+                      </md-select>
+                    </md-input-container>
+                  </md-card-content>
+                </md-card>
+              </div>
+            </md-grid-tile>
+
+            <!-- Orders -->      
+            <md-grid-tile md-colspan="3">
+              <md-card>
+                <md-card-header>
+                  <md-card-header-text>
+                    <span class="md-card-title">Pending Orders</span>
+                  </md-card-header-text>
+                </md-card-header>
+                <md-card-content>
+
+                </md-card-content>
+              </md-card>
+            </md-grid-tile>
+            <!-- Inventory -->
+            <md-grid-tile md-colspan="3"></md-grid-tile>
+
+          </md-grid-list>
+
+        </div>
+      </md-content>
   
-  <!-- toolbar container -->
-  <md-toolbar class="md-toolbar-tools md-whiteframe-2dp" layout="row">
-    <md-button 
-      class="menu md-icon-button"
-      ng-click="$ctrl.toggleMenu()" 
-      aria-label="Menu">
-      <md-icon>menu</md-icon>
-    </md-button>
-    <h1>TrendyBrunch</h1>
-  </md-toolbar>
-  
-  <div flex layout="row">
+    </div>
 
-    <md-sidenav class="md-whiteframe-4dp" md-component-id="left">
-      <md-list>
-        <md-list-item ng-repeat="view in $ctrl.views">
-          <md-icon class="md-list-icon">{{ view.icon }}</md-icon>
-          {{ view.name }}
-        </md-list-item>
-      </md-list>
-    </md-sidenav>
-  
-    <md-content flex id="content">
-      <!-- area container -->
-      <div class="grid-container">
-        <md-grid-list md-cols="6" md-row-height="fit">
-
-          <!-- Lineup -->
-          <md-grid-tile md-colspan="2">
-            <tb-lineup></tb-lineup>
-          </md-grid-tile>
-
-          <!-- Tables -->
-          <md-grid-tile md-colspan="4"></md-grid-tile>
-
-          <!-- Orders -->      
-          <md-grid-tile md-colspan="3"></md-grid-tile>
-          <!-- Inventory -->
-          <md-grid-tile md-colspan="3"></md-grid-tile>
-
-        </md-grid-list>
-
-      </div>
-    </md-content>
- 
   </div>
 
 </div>
